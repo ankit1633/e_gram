@@ -6,6 +6,10 @@ import Profile from './Profile';
 import Question from './Question.jsx';
 import Problem from './Problem.jsx';
 import Solution from './Solution.jsx';
+import Drawer from './Drawer.jsx'
+
+
+
 const LoginButton = styled(Button)`
     color: #008000;
     background: #F3CA52;
@@ -43,6 +47,8 @@ const CustomButtons = () => {
     const [openQuestion, setOpenQuestion] = useState(false);
     const [openProblem, setOpenProblem] = useState(false);
     const [openSolution, setOpenSolution] = useState(false);
+    const [openDrawer, setOpenDrawer] = useState(false);
+
 
     const openDialog = () => {
         setOpen(true);
@@ -60,6 +66,8 @@ const CustomButtons = () => {
         setOpenSolution(true);
     }
 
+    const openDrawerDialog = () => setOpenDrawer(true);
+
 
 
     return (
@@ -72,10 +80,12 @@ const CustomButtons = () => {
             {user && <LoginButton variant='contained' onClick={() => openQuestionDialog()} style={{ marginLeft: 30 }}>{user==="farmer" ? <Typography style={{display: 'flex'}}>Ask a question</Typography> : <Typography style={{display: 'flex'}}>Answer a question</Typography>} </LoginButton>}
             {user && <LoginButton variant='contained' onClick={() => openProblemDialog()} style={{ marginLeft: 30 }}>{user==="farmer" ? <Typography style={{display: 'flex'}}>Ask a Problem</Typography> : <Typography style={{display: 'flex'}}>Answer a problem</Typography>} </LoginButton>}
             {user && <LoginButton variant='contained' onClick={() => openSolutionDialog()} style={{ marginLeft: 30 }}>{user==="farmer" ? <Typography style={{display: 'flex'}}>Solutions</Typography> : null} </LoginButton>}
+            <LoginButton variant='contained' onClick={openDrawerDialog} style={{ marginLeft: 30 }}>{user === "farmer" ? <Typography>More</Typography> : <Typography>More</Typography>}</LoginButton>
             <LoginDialog open={open} setOpen={setOpen} />
             <Question openQuestion={openQuestion} setQuestionDialog={setOpenQuestion} />
             <Problem openProblem={openProblem} setProblemDialog={setOpenProblem} />
             <Solution openSolution={openSolution} setSolutionDialog={setOpenSolution} />
+            <Drawer openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
         </Wrapper>
     )
 }

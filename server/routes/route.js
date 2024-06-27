@@ -1,5 +1,5 @@
 import express from 'express';
-import { userSignup, userLogIn, expertLogIn, addQuestion, getQuestion, addAnswer, getAnswer , addProblem , getProblem, addProblemAnswer, getSolution} from '../controller/user-controller.js';
+import { userSignup, userLogIn, expertLogIn, addQuestion, getQuestion, addAnswer, getAnswer , addProblem , getProblem, addProblemAnswer, getSolution,addWater, getWater, addLight, getLight, addBus, getBus} from '../controller/user-controller.js';
 
 const router = express.Router();
 import multer from 'multer';
@@ -28,5 +28,10 @@ router.post('/problems', upload.single('img'), addProblem);
 router.get('/problems', getProblem);
 router.post('/answer-problem', addProblemAnswer);
 router.get('/solutions', getSolution);
-
+router.post('/add-water', addWater);
+router.get('/water', getWater);
+router.post('/add-light', addLight);
+router.get('/light', getLight);
+router.post('/add-bus', addBus);
+router.get('/bus', getBus);
 export default router;

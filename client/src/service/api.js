@@ -109,3 +109,57 @@ export const authenticateGetSolution = async (email) => {
         throw error;  // Re-throw the error to handle it in the component
     }
 };
+
+export const authenticateWater = async (data) => {
+    try {
+       return await axios.post(`${URL}/add-water`, data);
+    } catch(error) {
+        console.log(`error while calling add-water api`, error)
+        return error.response;
+    }
+}
+
+export const authenticateGetWater = async () => {
+    try {
+       return await axios.get(`${URL}/water`);
+    } catch(error) {
+        console.log(`error while calling get-water api`, error)
+        return error.response;
+    }
+}
+
+export const authenticateLight = async (data) => {
+    try {
+       return await axios.post(`${URL}/add-light`, data);
+    } catch(error) {
+        console.log(`error while calling add-light  api`, error)
+        return error.response;
+    }
+}
+
+export const authenticateGetLight = async () => {
+    try {
+       return await axios.get(`${URL}/light`);
+    } catch(error) {
+        console.log(`error while calling get-light api`, error)
+        return error.response;
+    }
+}
+
+export const authenticateBus = async (data) => {
+    try {
+       return await axios.post(`${URL}/add-bus`, data);
+    } catch(error) {
+        console.log(`error while calling add-bus  api`, error)
+        return error.response;
+    }
+}
+
+export const authenticateGetBus = async () => {
+    try {
+       return await axios.get(`${URL}/bus`);
+    } catch(error) {
+        console.log(`error while calling get-bus api`, error)
+        return error.response;
+    }
+}

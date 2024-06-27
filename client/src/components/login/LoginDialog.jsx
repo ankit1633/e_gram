@@ -61,8 +61,8 @@ const LoginDialog = ({ open, setOpen }) => {
   return (
     <StyledDialog open={open} onClose={handleClose}>
       <ContentBox>
-        <StyledButton variant='contained' onClick={openFarmerLoginDialog}>Farmer Login</StyledButton>
-        <StyledButton variant='contained' onClick={openExperLoginDialog} onCl>Expert Login</StyledButton>
+        <StyledButton variant='contained' onClick={openFarmerLoginDialog}>User Login</StyledButton>
+        <StyledButton variant='contained' onClick={openExperLoginDialog} onCl>Admin Login</StyledButton>
       </ContentBox>
       <FarmerLogin open={farmerLogin} onClose={handleFarmerLoginClose} />
       <ExpertLogin open = {expertLogin} onClose={handleExpertLoginClose} />
